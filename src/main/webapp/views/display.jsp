@@ -49,9 +49,9 @@
             </thead>
             <c:forEach var="drug" items="${drugList}">
                 <tr>
-                    <td>${drug.pk}</td>
-                    <td>${drug.patientId}</td>
-                    <td>${drug.drugName}</td>
+                    <td> ${drug.pk} </td>
+                    <td> ${drug.patient_id} </td>
+                    <td> ${drug.drugName} </td>
                 </tr>
             </c:forEach>
         </table>

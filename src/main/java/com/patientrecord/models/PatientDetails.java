@@ -16,7 +16,6 @@ public class PatientDetails {
     @Column(name="patient_id")
     private int patientId;
 
-
     private String fname;
 
     private String lname;

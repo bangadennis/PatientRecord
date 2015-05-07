@@ -13,10 +13,9 @@ public class PatientDrugs {
     @GeneratedValue
     private int pk;
 
-    @Column(name = "patient_id")
     //@ManyToOne
-    @JoinColumn(name = "patient_id")
-    private int patientId;
+   // @JoinColumn(name = "patient_id")
+    private int patient_id;
 
     @Column(name="drug_name")
     private String drugName;
@@ -30,12 +29,12 @@ public class PatientDrugs {
         this.pk = pk;
     }
 
-    public int getPatientId() {
-        return patientId;
+    public int getPatient_id() {
+        return patient_id;
     }
 
-    public void setPatientId(int patientId) {
-        this.patientId = patientId;
+    public void setPatient_id(int patient_id) {
+        this.patient_id = patient_id;
     }
 
     public String getDrugName() {

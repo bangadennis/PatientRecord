@@ -36,7 +36,9 @@ public class PatientRecord {
     @RequestMapping("/drugs")
     public String drugsform(Model model)
     {
-        model.addAttribute("msg","Add Drugs");
+        List<PatientDetails> patientList=patientDetailsService.getPatientList();
+        model.addAttribute("data",patientList);
+        model.addAttribute("msg","Add Patient's Drugs");
         return "patientdrugs";
     }
 
@@ -47,7 +49,7 @@ public class PatientRecord {
     {
 
         ModelAndView model = new ModelAndView();
-        model.addObject("msg", "Hello Patients");
+        model.addObject("msg", "Added Patient Successfully");
         PatientDetails patient = new PatientDetails();
         patient.setFname(fname);
         patient.setLname(lname);
@@ -65,13 +67,15 @@ public class PatientRecord {
     )
     {
         ModelAndView model = new ModelAndView();
-        model.addObject("msg", "Hello Drugs");
+        model.addObject("msg", "Added Successfully");
         PatientDrugs drugs =new PatientDrugs();
-        drugs.setPatientId(patientId);
+        drugs.setPatient_id(patientId);
         drugs.setDrugName(drugName);
 
         patientDrugsService.insertPatientDrug(drugs);
 
+        List<PatientDetails> patientList=patientDetailsService.getPatientList();
+        model.addObject("data", patientList);
         model.setViewName("patientdrugs");
 
         return model;

@@ -26,11 +26,18 @@
 <form action="<c:url value='/add_drug' />" method='POST'>
   <fieldset>
     <legend>Drug's Form</legend>
-    <label>Patient Identification</label>
-    <input type="text" placeholder="patient ID" name="patientId" >
+    <label>Patient ID</label>
+    <select name="patientId" required autofocus>
+      <c:forEach  var="option" items="${data}">
+        <option></option>
+        <option>${option.patientId}</option>
+      </c:forEach>
+    </select>
+    <!--<input type="text" placeholder="patient ID" name="patientId" >-->
+    <br>
     <br>
     <label>Drug Name</label>
-    <input type="text" placeholder="Drug Name" name="drugName" >
+    <input type="text" placeholder="Drug Name" name="drugName" required >
     <br>
     <button> Add Drug</button>
 

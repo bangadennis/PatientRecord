@@ -13,5 +13,4 @@ public interface PatientDetialsDao {
 
     public List<PatientDetails>  getPatientList();
 
-
 }

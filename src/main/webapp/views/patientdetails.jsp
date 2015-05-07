@@ -24,17 +24,17 @@
   <div class="msg">${msg}</div>
 </c:if>
 
-<form action="<c:url value='addpatient' />" method='POST'>
+<form action="<c:url value='/addpatient' />" method='POST'>
 <fieldset>
   <legend>Patient's Form</legend>
   <label>First Name</label><br>
-  <input type="text" placeholder="first name" name="fname" >
+  <input type="text" placeholder="first name" name="fname"  required autofocus>
   <br>
   <label>Last Name</label><br>
-  <input type="text" placeholder="last name" name="lname" >
+  <input type="text" placeholder="last name" name="lname" required>
   <br>
   <label>Date Of Birth</label><br>
-  <input type="date" placeholder="Date Of Birth" name="dateofbirth" >
+  <input type="date" placeholder="Date Of Birth" name="dateofbirth" required >
   <br>
   <button> Add Patient</button>
 
