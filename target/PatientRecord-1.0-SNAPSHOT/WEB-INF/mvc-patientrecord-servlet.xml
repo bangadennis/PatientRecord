@@ -52,8 +52,11 @@
     <bean id="persistenceExceptionTranslationPostProcessor"
           class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
 
-    <bean id="patientDaoImpl" class="com.springexample.dao.impl" />
-    <bean id="patientServiceImpl" class="com.springexample.service" />
+    <bean id="patientDetailsDaoImpl" class="com.patientrecord.dao.impl.PatientDetailsDaoImpl" />
+    <bean id="patientDetailsServiceImpl" class="com.patientrecord.services.PatientDetailsServiceImpl" />
+
+    <bean id="patientDrugsDaoImpl" class="com.patientrecord.dao.impl.PatientDrugsDaoImpl" />
+    <bean id="patientDrugsServiceImpl" class="com.patientrecord.services.PatientDrugsServiceImpl" />
 
     <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/views/"/>
