@@ -8,6 +8,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "patientdrugs")
 public class PatientDrugs {
+    //Class Members
     @Id
     @GeneratedValue
     private int pk;
@@ -20,6 +21,7 @@ public class PatientDrugs {
     @Column(name="drug_name")
     private String drugName;
 
+    //Setters/Getters
     public int getPk() {
         return pk;
     }
