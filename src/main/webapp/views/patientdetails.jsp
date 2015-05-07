@@ -25,12 +25,20 @@
 </c:if>
 
 <form action="<c:url value='addpatient' />" method='POST'>
-
+<fieldset>
+  <legend>Patient's Form</legend>
+  <label>First Name</label><br>
   <input type="text" placeholder="first name" name="fname" >
+  <br>
+  <label>Last Name</label><br>
   <input type="text" placeholder="last name" name="lname" >
-  <input type="text" placeholder="Date Of Birth" name="dateofbirth" >
-
+  <br>
+  <label>Date Of Birth</label><br>
+  <input type="date" placeholder="Date Of Birth" name="dateofbirth" >
+  <br>
   <button> Add Patient</button>
+
+</fieldset>
 
 </form>
 

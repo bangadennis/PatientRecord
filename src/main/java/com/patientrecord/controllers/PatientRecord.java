@@ -84,7 +84,7 @@ public class PatientRecord {
         ModelAndView model = new ModelAndView();
         List<PatientDrugs> drugList=patientDrugsService.getPatientDrugsList();
         model.addObject("drugList", drugList);
-        model.setViewName("displa");
+        model.setViewName("display");
         return model;
     }
 

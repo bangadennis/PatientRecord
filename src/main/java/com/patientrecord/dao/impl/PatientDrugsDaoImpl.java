@@ -21,13 +21,14 @@ public class PatientDrugsDaoImpl implements PatientDrugsDao {
     @Transactional
     @Override
     public int insertPatientDrug(PatientDrugs patientDrug) {
-        Session session =sessionFactory.openSession();
-        Transaction tx=session.beginTransaction();
-        session.save(patientDrug);
-        tx.commit();
-        Serializable id=session.getIdentifier(patientDrug);
-        session.close();
-        return (Integer) id;
+            Session session =sessionFactory.openSession();
+            Transaction tx=session.beginTransaction();
+            session.save(patientDrug);
+            tx.commit();
+            Serializable id=session.getIdentifier(patientDrug);
+            session.close();
+            return (Integer) id;
+
     }
 
     @Override

@@ -17,8 +17,16 @@
     <h1>Patient Table</h1>
     <div class="employeeList">
         <table>
+            <thead>
+            <td>Patient ID</td>
+            <td>FirstName</td>
+            <td>LastName</td>
+            <td>DateOfBirth</td>
+            <td>Timestamp</td>
+            </thead>
             <c:forEach var="patient" items="${patientList}">
                 <tr>
+                    <td>patient.patientId</td>
                     <td>${patient.fname}</td>
                     <td>${patient.lname}</td>
                     <td>${patient.dateofbirth}</td>
@@ -31,15 +39,19 @@
 </c:if>
 
 <c:if test="${not empty drugList}">
-    <h1>Patient Table</h1>
+    <h1>Drugs Table</h1>
     <div class="drugList">
         <table>
+            <thead>
+            <td>Id</td>
+            <td>Patient ID</td>
+            <td>Drug Name</td>
+            </thead>
             <c:forEach var="drug" items="${drugList}">
                 <tr>
                     <td>${drug.pk}</td>
                     <td>${drug.patientId}</td>
-                    <td>>${drug.drugName}</td>
-
+                    <td>${drug.drugName}</td>
                 </tr>
             </c:forEach>
         </table>

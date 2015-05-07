@@ -24,11 +24,17 @@
 </c:if>
 
 <form action="<c:url value='/add_drug' />" method='POST'>
+  <fieldset>
+    <legend>Drug's Form</legend>
+    <label>Patient Identification</label>
+    <input type="text" placeholder="patient ID" name="patientId" >
+    <br>
+    <label>Drug Name</label>
+    <input type="text" placeholder="Drug Name" name="drugName" >
+    <br>
+    <button> Add Drug</button>
 
-  <input type="text" placeholder="patient ID" name="patientId" >
-  <input type="text" placeholder="Drug Name" name="drugName" >
-
-  <button> Add Drug</button>
+  </fieldset>
 
 </form>
 
