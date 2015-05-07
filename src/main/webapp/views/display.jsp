@@ -26,7 +26,7 @@
             </thead>
             <c:forEach var="patient" items="${patientList}">
                 <tr>
-                    <td>patient.patientId</td>
+                    <td>${patient.patientId}</td>
                     <td>${patient.fname}</td>
                     <td>${patient.lname}</td>
                     <td>${patient.dateofbirth}</td>
