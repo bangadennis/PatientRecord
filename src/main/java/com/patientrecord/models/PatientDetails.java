@@ -9,10 +9,11 @@ import java.util.Date;
  * Created by banga on 5/7/15.
  */
 @Entity
-@Table(name = "patientdetials")
+@Table(name = "patientdetails")
 public class PatientDetails {
     @Id
     @GeneratedValue
+    @Column(name="patient_id")
     private int patientId;
 
 
@@ -21,7 +22,7 @@ public class PatientDetails {
     private String lname;
 
     @Column(name = "dob")
-    private Date dateofbirth;
+    private String dateofbirth;
 
     private String timestamp;
 
@@ -50,11 +51,11 @@ public class PatientDetails {
         this.lname = lname;
     }
 
-    public Date getDateofbirth() {
+    public String getDateofbirth() {
         return dateofbirth;
     }
 
-    public void setDateofbirth(Date dateofbirth) {
+    public void setDateofbirth(String dateofbirth) {
         this.dateofbirth = dateofbirth;
     }
 

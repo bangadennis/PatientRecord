@@ -14,7 +14,7 @@ public class PatientDrugs {
     private int pk;
 
     @Column(name = "patient_id")
-    @ManyToOne
+    //@ManyToOne
     @JoinColumn(name = "patient_id")
     private int patientId;
 

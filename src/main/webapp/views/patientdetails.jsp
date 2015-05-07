@@ -24,13 +24,13 @@
   <div class="msg">${msg}</div>
 </c:if>
 
-<form action="<c:url value='/addpatient' />" method='POST'>
+<form action="<c:url value='addpatient' />" method='POST'>
 
   <input type="text" placeholder="first name" name="fname" >
   <input type="text" placeholder="last name" name="lname" >
-  <input type="date" placeholder="Date Of Birth" name="dateofbirth" >
+  <input type="text" placeholder="Date Of Birth" name="dateofbirth" >
 
-  <button> Add</button>
+  <button> Add Patient</button>
 
 </form>
 
