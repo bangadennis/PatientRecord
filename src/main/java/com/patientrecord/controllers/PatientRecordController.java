@@ -19,7 +19,7 @@ import java.util.List;
  * Created by banga on 5/7/15.
  */
 @Controller
-public class PatientRecord {
+public class PatientRecordController {
     @Autowired
     private PatientDetailsService patientDetailsService;
     @Autowired
@@ -88,7 +88,7 @@ public class PatientRecord {
         ModelAndView model = new ModelAndView();
         List<PatientDrugs> drugList=patientDrugsService.getPatientDrugsList();
         model.addObject("drugList", drugList);
-        List myList=patientDrugsService.getDrugPatientData();
+        List <Object []>myList=patientDrugsService.getDrugPatientData();
 
 //        for(Object row : myList){
 //            PatientDrugs emp = new PatientDrugs();
@@ -101,7 +101,7 @@ public class PatientRecord {
 //            System.out.println(emp);
 //            System.out.println(address);
 //        }
-
+        model.addObject("drugPatientList", myList);
         model.setViewName("display");
         return model;
     }

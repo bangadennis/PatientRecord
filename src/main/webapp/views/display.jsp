@@ -75,7 +75,34 @@
         </table>
     </div>
 </c:if>
-    </div>
+
+    <c:if test="${not empty drugPatientList}">
+        <h1>Drugs Table</h1>
+        <div class="">
+            <table class="table table-stripped table-hover">
+                <thead>
+                <td>Id</td>
+                <td>Patient ID</td>
+                <td>Drug Name</td>
+                </thead>
+                <c:forEach var="objOut" items="${drugPatientList}">
+                <c:forEach var="obj" items="${objOut}">
+                <tr>
+                    <c:if test="${obj}">
+                        <td><c:out value="${ob.patientId}"/></td>
+                        <td><c:out value="${obj.patient_id}"/> </td>
+                        <%--<td><c:out value="${obj.pk}"/> </td>--%>
+                    </c:if>
+
+                </tr>
+                </c:forEach>
+                </table>
+                </c:forEach>
+                </tbody>
+            </table>
+        </div>
+    </c:if>
+</div>
 
 
 </body>

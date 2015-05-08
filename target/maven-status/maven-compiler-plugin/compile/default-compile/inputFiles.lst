@@ -2,10 +2,10 @@
 /home/banga/IdeaProjects/PatientRecord/src/main/java/com/patientrecord/dao/impl/PatientDetailsDaoImpl.java
 /home/banga/IdeaProjects/PatientRecord/src/main/java/com/patientrecord/services/PatientDrugsServiceImpl.java
 /home/banga/IdeaProjects/PatientRecord/src/main/java/com/patientrecord/models/PatientDetails.java
-/home/banga/IdeaProjects/PatientRecord/src/main/java/com/patientrecord/controllers/PatientRecord.java
 /home/banga/IdeaProjects/PatientRecord/src/main/java/com/patientrecord/models/PatientDrugs.java
 /home/banga/IdeaProjects/PatientRecord/src/main/java/com/patientrecord/dao/PatientDetialsDao.java
 /home/banga/IdeaProjects/PatientRecord/src/main/java/com/patientrecord/services/PatientDetailsServiceImpl.java
 /home/banga/IdeaProjects/PatientRecord/src/main/java/com/patientrecord/dao/impl/PatientDrugsDaoImpl.java
+/home/banga/IdeaProjects/PatientRecord/src/main/java/com/patientrecord/controllers/PatientRecordController.java
 /home/banga/IdeaProjects/PatientRecord/src/main/java/com/patientrecord/dao/PatientDrugsDao.java
 /home/banga/IdeaProjects/PatientRecord/src/main/java/com/patientrecord/services/PatientDrugsService.java

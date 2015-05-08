@@ -24,7 +24,7 @@ public class PatientDrugsServiceImpl implements PatientDrugsService {
     }
 
     @Override
-    public List getDrugPatientData() {
+    public List<Object []> getDrugPatientData() {
         return patientDrugsDao.getDrugPatientData();
     }
 }

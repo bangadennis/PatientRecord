@@ -45,7 +45,7 @@ public class PatientDrugsDaoImpl implements PatientDrugsDao {
     }
 
     @Override
-    public List getDrugPatientData() {
+    public List<Object []> getDrugPatientData() {
 
         Session session=sessionFactory.openSession();
         //Query query = session.createQuery("from Cat cat inner join Owner owner where owner.Name ='Duke'");
@@ -59,7 +59,7 @@ public class PatientDrugsDaoImpl implements PatientDrugsDao {
 
         query.addEntity(PatientDrugs.class);
         query.addEntity(PatientDetails.class);
-        List myList =query.list();
+        List <Object []> myList =query.list();
         session.close();
 
         return myList;
