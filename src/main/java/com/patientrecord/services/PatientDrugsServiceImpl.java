@@ -22,4 +22,9 @@ public class PatientDrugsServiceImpl implements PatientDrugsService {
     public List<PatientDrugs> getPatientDrugsList() {
         return patientDrugsDao.getPatientDrugsList();
     }
+
+    @Override
+    public List getDrugPatientData() {
+        return patientDrugsDao.getDrugPatientData();
+    }
 }

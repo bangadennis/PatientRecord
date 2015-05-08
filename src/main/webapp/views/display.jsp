@@ -10,13 +10,31 @@
 <html>
 <head>
     <title></title>
+    <link href="<c:url value="/bootstrap/bootstrap.min.css" />" rel="stylesheet">
 </head>
 <body>
+<div class="col-md-8">
+    <a class="" href="patients"><button class="bg-info">Add Patients</button></a>
+    <a class="" href="drugs"><button class="bg-info">Add Drugs</button></a>
+    <a class="" href="patientslist"><button class="bg-info">Patient List</button></a>
+    <a class="" href="drugslist"><button class="bg-info">Drug List</button></a>
+</div>
 
+<div class="">
+    <c:if test="${ empty error}">
+        <div class="alert alert-success">${error}</div>
+    </c:if>
+
+    <c:if test="${ not empty msg}">
+        <div class="alert alert-success">${msg}</div>
+    </c:if>
+</div>
+
+<div class="col-md-8 col-md-offset-2">
 <c:if test="${not empty patientList}">
     <h1>Patient Table</h1>
-    <div class="employeeList">
-        <table>
+    <div class="">
+        <table class="table table-stripped table-hover">
             <thead>
             <td>Patient ID</td>
             <td>FirstName</td>
@@ -40,8 +58,8 @@
 
 <c:if test="${not empty drugList}">
     <h1>Drugs Table</h1>
-    <div class="drugList">
-        <table>
+    <div class="">
+        <table class="table table-stripped table-hover">
             <thead>
             <td>Id</td>
             <td>Patient ID</td>
@@ -57,5 +75,8 @@
         </table>
     </div>
 </c:if>
+    </div>
+
+
 </body>
 </html>

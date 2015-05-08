@@ -13,4 +13,6 @@ public interface PatientDrugsDao {
 
     public List<PatientDrugs> getPatientDrugsList();
 
+    public List getDrugPatientData();
+
 }

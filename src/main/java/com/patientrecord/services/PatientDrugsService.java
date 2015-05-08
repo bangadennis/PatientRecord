@@ -11,4 +11,6 @@ public interface PatientDrugsService {
     public int insertPatientDrug(PatientDrugs patientDrug);
 
     public List<PatientDrugs> getPatientDrugsList();
+
+    public List<Object []> getDrugPatientData();
 }

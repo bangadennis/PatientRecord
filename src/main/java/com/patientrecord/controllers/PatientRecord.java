@@ -88,6 +88,20 @@ public class PatientRecord {
         ModelAndView model = new ModelAndView();
         List<PatientDrugs> drugList=patientDrugsService.getPatientDrugsList();
         model.addObject("drugList", drugList);
+        List myList=patientDrugsService.getDrugPatientData();
+
+//        for(Object row : myList){
+//            PatientDrugs emp = new PatientDrugs();
+//            emp.setPk(Integer.parseInt(row[0].toString()));
+//            emp.setDrugName(row[2].toString());
+//            PatientDetails address = new PatientDetails();
+//            address.setPatientId(Integer.parseInt(row[3].toString()));
+//            address.setFname(row[4].toString());
+//            address.setLname(row[5].toString());
+//            System.out.println(emp);
+//            System.out.println(address);
+//        }
+
         model.setViewName("display");
         return model;
     }
