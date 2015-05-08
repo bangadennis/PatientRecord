@@ -15,7 +15,7 @@ public class PatientDrugs {
 
     //@ManyToOne
     //@JoinColumn(name = "patientId")
-    private int patient_id;
+    private PatientDetails patientg_id;
 
     @Column(name="drug_name")
     private String drugName;
