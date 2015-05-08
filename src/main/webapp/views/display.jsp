@@ -70,14 +70,15 @@
                     <td> ${drug.pk} </td>
                     <td> ${drug.patient_id} </td>
                     <td> ${drug.drugName} </td>
+                    <td> ${drug.patientObj.fname} </td>
                 </tr>
             </c:forEach>
         </table>
     </div>
 </c:if>
 
-    <c:if test="${not empty drugPatientList}">
-        <h1>Drugs Table</h1>
+   <%-- <c:if test="${not empty drugPatientList1}">
+        <h1>Drugs-Patient Table</h1>
         <div class="">
             <table class="table table-stripped table-hover">
                 <thead>
@@ -91,7 +92,7 @@
                     <c:if test="${obj}">
                         <td><c:out value="${ob.patientId}"/></td>
                         <td><c:out value="${obj.patient_id}"/> </td>
-                        <%--<td><c:out value="${obj.pk}"/> </td>--%>
+                        &lt;%&ndash;<td><c:out value="${obj.pk}"/> </td>&ndash;%&gt;
                     </c:if>
 
                 </tr>
@@ -101,7 +102,7 @@
                 </tbody>
             </table>
         </div>
-    </c:if>
+    </c:if>--%>
 </div>
 
 

@@ -12,22 +12,17 @@ public class PatientDrugs {
     @Id
     @GeneratedValue
     private int pk;
+    @Column(name = "patient_id")
+    private int patient_id;
 
-    //@ManyToOne
-    //@JoinColumn(name = "patientId")
-    private PatientDetails patientg_id;
+    @ManyToOne
+    @JoinColumn(name = "patient_id", updatable = false, insertable = false)
+    public PatientDetails patientObj;
 
     @Column(name="drug_name")
     private String drugName;
 
     //Setters/Getters
-    public int getPk() {
-        return pk;
-    }
-
-    public void setPk(int pk) {
-        this.pk = pk;
-    }
 
     public int getPatient_id() {
         return patient_id;
@@ -36,6 +31,15 @@ public class PatientDrugs {
     public void setPatient_id(int patient_id) {
         this.patient_id = patient_id;
     }
+
+    public int getPk() {
+        return pk;
+    }
+
+    public void setPk(int pk) {
+        this.pk = pk;
+    }
+
 
     public String getDrugName() {
         return drugName;

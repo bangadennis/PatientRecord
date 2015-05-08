@@ -5,6 +5,7 @@ import com.patientrecord.models.PatientDetails;
 import com.patientrecord.models.PatientDrugs;
 import com.patientrecord.services.PatientDetailsService;
 import com.patientrecord.services.PatientDrugsService;
+import org.apache.commons.lang.ObjectUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -62,19 +63,22 @@ public class PatientRecordController {
 
    @RequestMapping("/add_drug")
     public ModelAndView addDrug(
-            @RequestParam(value = "patientId", required = true) Integer patientId,
-            @RequestParam(value = "drugName", required = true) String drugName
+            @RequestParam(value = "patientId", required = false) int patientId,
+            @RequestParam(value = "drugName", required = false) String drugName
     )
     {
         ModelAndView model = new ModelAndView();
-        model.addObject("msg", "Added Successfully");
-        PatientDrugs drugs =new PatientDrugs();
-        drugs.setPatient_id(patientId);
-        drugs.setDrugName(drugName);
+        if(drugName=="")
+        {
 
-        patientDrugsService.insertPatientDrug(drugs);
-
+            model.addObject("msg", "Added Successfully");
+            PatientDrugs drugs = new PatientDrugs();
+            drugs.setPatient_id(patientId);
+            drugs.setDrugName(drugName);
+            patientDrugsService.insertPatientDrug(drugs);
+        }
         List<PatientDetails> patientList=patientDetailsService.getPatientList();
+        PatientDrugs objDrugs=new PatientDrugs();
         model.addObject("data", patientList);
         model.setViewName("patientdrugs");
 
@@ -88,7 +92,7 @@ public class PatientRecordController {
         ModelAndView model = new ModelAndView();
         List<PatientDrugs> drugList=patientDrugsService.getPatientDrugsList();
         model.addObject("drugList", drugList);
-        List <Object []>myList=patientDrugsService.getDrugPatientData();
+        //List <Object []>myList=patientDrugsService.getDrugPatientData();
 
 //        for(Object row : myList){
 //            PatientDrugs emp = new PatientDrugs();
@@ -101,7 +105,7 @@ public class PatientRecordController {
 //            System.out.println(emp);
 //            System.out.println(address);
 //        }
-        model.addObject("drugPatientList", myList);
+        //model.addObject("drugPatientList", myList);
         model.setViewName("display");
         return model;
     }
