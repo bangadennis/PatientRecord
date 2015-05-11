@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -61,51 +62,45 @@ public class PatientRecordController {
         return model;
     }
 
-   @RequestMapping("/add_drug")
+   @RequestMapping(value="/add")
     public ModelAndView addDrug(
-            @RequestParam(value = "patientId", required = false) int patientId,
-            @RequestParam(value = "drugName", required = false) String drugName
+
+            @RequestParam(value = "patientId", required = true) int patientId,
+            @RequestParam(value = "drugName", required = true) String drugName
     )
     {
         ModelAndView model = new ModelAndView();
-        if(drugName=="")
-        {
+        model.addObject("msg", "Added Successfully");
+        PatientDrugs drugs = new PatientDrugs();
+        drugs.setPatient_id(patientId);
+        drugs.setDrugName(drugName);
+        patientDrugsService.insertPatientDrug(drugs);
 
-            model.addObject("msg", "Added Successfully");
-            PatientDrugs drugs = new PatientDrugs();
-            drugs.setPatient_id(patientId);
-            drugs.setDrugName(drugName);
-            patientDrugsService.insertPatientDrug(drugs);
-        }
         List<PatientDetails> patientList=patientDetailsService.getPatientList();
-        PatientDrugs objDrugs=new PatientDrugs();
-        model.addObject("data", patientList);
-        model.setViewName("patientdrugs");
+        model.addObject("patientList", patientList);
+
+        model.setViewName("display");
 
         return model;
 
-
     }
 
+    @RequestMapping(value="/add_drug", method= RequestMethod.GET )
+    public ModelAndView addDrugMethod(
+            @RequestParam(value = "id", required = true) int id
+    )
+    {
+        ModelAndView model = new ModelAndView();
+        model.addObject("id", id);
+        model.setViewName("patientdrugs");
+        return model;
+
+    }
     @RequestMapping("/drugslist")
     public ModelAndView displayDrugs(){
         ModelAndView model = new ModelAndView();
         List<PatientDrugs> drugList=patientDrugsService.getPatientDrugsList();
         model.addObject("drugList", drugList);
-        //List <Object []>myList=patientDrugsService.getDrugPatientData();
-
-//        for(Object row : myList){
-//            PatientDrugs emp = new PatientDrugs();
-//            emp.setPk(Integer.parseInt(row[0].toString()));
-//            emp.setDrugName(row[2].toString());
-//            PatientDetails address = new PatientDetails();
-//            address.setPatientId(Integer.parseInt(row[3].toString()));
-//            address.setFname(row[4].toString());
-//            address.setLname(row[5].toString());
-//            System.out.println(emp);
-//            System.out.println(address);
-//        }
-        //model.addObject("drugPatientList", myList);
         model.setViewName("display");
         return model;
     }

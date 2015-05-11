@@ -2,8 +2,7 @@ package com.patientrecord.models;
 
 
 import javax.persistence.*;
-import java.security.Timestamp;
-import java.util.Date;
+import java.util.List;
 
 /**
  * Created by banga on 5/7/15.
@@ -16,6 +15,7 @@ public class PatientDetails {
     @Column(name="patient_id")
     private int patientId;
 
+
     private String fname;
 
     private String lname;
@@ -24,6 +24,9 @@ public class PatientDetails {
     private String dateofbirth;
 
     private String timestamp;
+
+    @OneToMany(fetch=FetchType.LAZY)
+    private List<PatientDrugs> patientDrugs;
 
     //getters and setters
     public int getPatientId() {
@@ -64,5 +67,13 @@ public class PatientDetails {
 
     public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
+    }
+
+    public List<PatientDrugs> getPatientDrugs() {
+        return patientDrugs;
+    }
+
+    public void setPatientDrugs(List<PatientDrugs> patientDrugs) {
+        this.patientDrugs = patientDrugs;
     }
 }

@@ -41,6 +41,7 @@
             <td>LastName</td>
             <td>DateOfBirth</td>
             <td>Timestamp</td>
+            <td>Add Drug</td>
             </thead>
             <c:forEach var="patient" items="${patientList}">
                 <tr>
@@ -49,7 +50,8 @@
                     <td>${patient.lname}</td>
                     <td>${patient.dateofbirth}</td>
                     <td>${patient.timestamp}</td>
-
+                    <td><a href="<c:url value='/add_drug?id=${patient.patientId}' />"
+                            >Add Drug</a></td>
                 </tr>
             </c:forEach>
         </table>
@@ -70,7 +72,7 @@
                     <td> ${drug.pk} </td>
                     <td> ${drug.patient_id} </td>
                     <td> ${drug.drugName} </td>
-                    <td> ${drug.patientObj.fname} </td>
+                    <td> ${drug.patientDetails.fname} </td>
                 </tr>
             </c:forEach>
         </table>

@@ -15,12 +15,14 @@ public class PatientDrugs {
     @Column(name = "patient_id")
     private int patient_id;
 
+
     @ManyToOne
     @JoinColumn(name = "patient_id", updatable = false, insertable = false)
-    public PatientDetails patientObj;
+    private PatientDetails patientDetails;
 
     @Column(name="drug_name")
     private String drugName;
+
 
     //Setters/Getters
 
@@ -48,4 +50,14 @@ public class PatientDrugs {
     public void setDrugName(String drugName) {
         this.drugName = drugName;
     }
+
+    public PatientDetails getPatientDetails() {
+        return patientDetails;
+    }
+
+    public void setPatientDetails(PatientDetails patientDetails) {
+        this.patientDetails = patientDetails;
+    }
+
+
 }

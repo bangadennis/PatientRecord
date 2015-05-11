@@ -35,16 +35,11 @@
 </c:if>
 
 <div class="col-md-4 col-md-offset-4">
-<form action="<c:url value='/add_drug' />" method='POST'>
+<form action="<c:url value='/add' />" method='POST'>
   <fieldset>
     <legend>Drug's Form</legend>
-    <label>Patient ID</label>
-    <select name="patientId" required class="form-control">
-      <option></option>
-      <c:forEach  var="option" items="${data}">
-        <option>${option.patientId}</option>
-      </c:forEach>
-    </select>
+    <%--<label>Patient ID</label>--%>
+    <input class="form-control" type="hidden" value="${id}" name="patientId" required >
     <!--<input type="text" placeholder="patient ID" name="patientId" >-->
     <br>
     <br>
