@@ -86,7 +86,7 @@ public class PatientRecordController {
     }
 
     @RequestMapping(value="/add_drug", method= RequestMethod.GET )
-    public ModelAndView addDrugMethod(
+    public ModelAndView displayDrugForm(
             @RequestParam(value = "id", required = true) int id
     )
     {
