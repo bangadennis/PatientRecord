@@ -63,9 +63,12 @@
     <div class="">
         <table class="table table-stripped table-hover">
             <thead>
-            <td>Id</td>
+            <td>#</td>
             <td>Patient ID</td>
             <td>Drug Name</td>
+            <td>Patient Name</td>
+            <td>DOB</td>
+            <td>Timestamp</td>
             </thead>
             <c:forEach var="drug" items="${drugList}">
                 <tr>
@@ -73,6 +76,8 @@
                     <td> ${drug.patient_id} </td>
                     <td> ${drug.drugName} </td>
                     <td> ${drug.patientDetails.fname} </td>
+                    <td>${drug.patientDetails.dateofbirth}</td>
+                    <td>${drug.patientDetails.timestamp}</td>
                 </tr>
             </c:forEach>
         </table>
