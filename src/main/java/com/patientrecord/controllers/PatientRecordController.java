@@ -27,6 +27,7 @@ public class PatientRecordController {
     @Autowired
     private PatientDrugsService patientDrugsService;
 
+    //displays the patients form
     @RequestMapping("/patients")
     public String patientsform(Model model)
     {
@@ -35,6 +36,7 @@ public class PatientRecordController {
     }
 
 
+    //displays the drugs form
     @RequestMapping("/drugs")
     public String drugsform(Model model)
     {
@@ -44,6 +46,7 @@ public class PatientRecordController {
         return "patientdrugs";
     }
 
+    //Method for adding patients details in the database
     @RequestMapping("/addpatient")
     public ModelAndView addPatient(@RequestParam(value = "fname", required = true) String fname,
                                    @RequestParam(value = "lname", required = true) String lname,
@@ -62,6 +65,7 @@ public class PatientRecordController {
         return model;
     }
 
+    //Processes the adding of a drug to a patient in the database
    @RequestMapping(value="/add")
     public ModelAndView addDrug(
 
@@ -85,6 +89,7 @@ public class PatientRecordController {
 
     }
 
+    //Displays Form to add a drug for a patient
     @RequestMapping(value="/add_drug", method= RequestMethod.GET )
     public ModelAndView displayDrugForm(
             @RequestParam(value = "id", required = true) int id
@@ -96,6 +101,7 @@ public class PatientRecordController {
         return model;
 
     }
+    //Display list of drugs and the patients allocated the drugs
     @RequestMapping("/drugslist")
     public ModelAndView displayDrugs(){
         ModelAndView model = new ModelAndView();
